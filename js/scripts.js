@@ -4,7 +4,6 @@ var inputString = "don't compare yourself to others, compare yourself to the per
 var newString = "";
 newString = inputString.replace(/[ !%$;.,_'-?]/g,'');
 newString = newString.toLowerCase();
-//alert(newString.length + " " + newString);
 
 var totalElements = newString.length;
 var sqRoot = Math.sqrt(totalElements);
@@ -22,37 +21,31 @@ if (sqRoot%1 === 0) {
 var normalArray = [];
 var encryptArray = [];
 var letterCount = 0;
-//alert(columns + " " + rows);
-//alert(newString);
 
-/*
-for (var i=0; i < 69; i++) {
-	encryptArray[i] = newString.charAt(i);
-}
-alert(encryptArray.toString());
-*/
+for (var i=0; i < rows; i++) {
+	var newArray = [];
+  normalArray[i] = newArray;
+  //normalArray[i] = new Array(rows);
 
-for (var i=0; i < columns; i++) {
-	for (var j=0; j < rows; j++) {
-  	normalArray[letterCount] = newString.charAt(letterCount);
+  for (var j=0; j < columns; j++) {
+    normalArray[i][j] = newString.charAt(letterCount);
     letterCount++;
   }
 }
 
-alert(normalArray.toString());
-letterCount = 0;
-
-for (var i=0; i < columns; i++) {
-	for (var j=0; j < rows; j++) {
-  	encryptArray[j][i] = normalArray[letterCount];
-    letterCount++;
-  }
-}
-
-alert(encryptArray.toString());
-
-
-
-//var test1 = 1;
-//alert(newString.charAt(test1));
+//alert(normalArray.toString());
+alert(normalArray[0][0].toString());
+alert(normalArray[1][0].toString());
+alert(normalArray[2][0].toString());
 //alert(encryptArray.toString());
+
+var elementCount = 0;
+
+for(var i=0; i < rows; i++) {
+	for(var j=0; j < columns; j++) {
+  	encryptArray[elementCount] = normalArray[j][i];
+    elementCount++;
+  }
+}
+
+alert(encryptArray.toString());
