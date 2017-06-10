@@ -1,4 +1,3 @@
-// daeer leweo rlref rerne fsyts rdtyt coooe acooo utnyy ouomr hyemr tpseo spsha eput
 
 var inputString = "don't compare yourself to others, compare yourself to the person you were yesterday";
 var newString = "";
@@ -33,12 +32,6 @@ for (var i=0; i < rows; i++) {
   }
 }
 
-//alert(normalArray.length + " " + normalArray.toString());
-//alert(normalArray[0][0].toString());
-//alert(normalArray[1][0].toString());
-//alert(normalArray[2][0].toString());
-//alert(encryptArray.toString());
-
 var elementCount = 0;
 
 for(var i=0; i < columns; i++) {
@@ -48,17 +41,19 @@ for(var i=0; i < columns; i++) {
   }
 }
 
-//alert(encryptArray.length + " " + encryptArray.toString());
+//clear out any empty arrays
+for (var i=0; i < encryptArray.length; i++) {
+	if (encryptArray[i] === "" ) {
+  	encryptArray.splice(i,1);
+  }
+}
 
-for (var i=0; i < elementCount; i++) {
+for (var i=0; i < encryptArray.length; i++) {
 	if ((i+1)%5===0) {
   	encryptArray[i] = encryptArray[i] + " ";
   }
 }
 
-//alert(encryptArray.toString());
-
 var outputString = encryptArray.toString();
 outputString = outputString.replace(/[,]/g,'');
-//outputString = outputString.replace(/[undefined]/g,'');
 alert(outputString);
